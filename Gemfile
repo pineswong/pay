@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'puma'
 # has_secure_password
 gem 'bcrypt', '3.1.7'
 # 分页
