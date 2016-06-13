@@ -1,0 +1,157 @@
+ 	#content{
+ 		/*height: 1000px;*/
+		width: 1200px;
+		margin: 0px auto;
+		margin-top: 0px;
+		
+	}
+
+	#header{
+		height: 114px;
+		background:url(../image/header.png);
+	}
+
+	#headergundong{
+		width: 600px;
+		height: 40px;
+		margin-left: 500px;
+	}
+
+	#ManagerLogin{
+		width: 250px;
+		height: 30px;
+		margin-top: 10px;
+		margin-left: 550px;
+	}
+
+	#YongHuJiaofei{
+		width: 250px;
+		height: 30px;
+		margin-top: 10px;
+		margin-left: 540px;
+	}
+
+	#Shang{
+		margin-top: 8px;
+		height: 225px;
+	}
+
+	#Shang-left{
+		width: 316px;
+		height: 225px;
+		float: left;
+		background-color : #D2E7FC;
+		border: 1px solid #bfddfa;
+	}
+
+	#Shang-right{
+		width: 876px;
+		height: 225px;
+		float: right;
+		margin-left: 8px;
+	}
+
+
+	#Zhong{
+		margin-top: 8px;
+		height: 225px;
+	}
+
+	#Zhong-left{
+		width: 316px;
+		height: 225px;
+		float: left;
+		background:url(../image/tel.jpg);
+	}
+
+	#Zhong-right{
+		width: 876px;
+		height: 225px;
+		float: right;
+		margin-left: 8px;
+		background:url(../image/gn.jpg);
+		 border:1px solid #A1CDF9;
+	}
+
+	#Xia{
+		margin-top: 8px;
+		height: 225px;
+		margin-bottom: 8px;
+		
+	}
+
+	#Xia-left{
+		width: 316px;
+		height: 225px;
+		float: left;
+		background:url(../image/quan.jpg);
+	}
+
+	#Xia-right{
+		width: 876px;
+		height: 225px;
+		float: right;
+		margin-left: 8px;
+	}
+
+	#gonggao{
+		width: 620px;
+		height: 225px;
+		border:1px solid #6EADF3;
+		float: left;
+	}
+
+	#gonggaobiaoti{
+		height: 40px;
+		background: #D2E7FC;
+	}
+
+	#aaaaa{
+		height: 30px;
+		width: 110px;
+		margin-left: 270px;
+	}
+
+	#gonggaoneirong{
+		background: #FFFFFF;
+		height: 185px;
+		border:1px solid #6EADF3;
+	}
+
+	#erweima{
+		width: 248px;
+		height: 225px;
+		background: #FFFFFF;
+		float: right;
+		border:1px solid #6EADF3;
+	}
+
+	#erweimashang{
+		height: 40px;
+	}
+
+	#aaaaab{
+		height: 30px;
+		width: 248px;
+	}
+
+	#erweimaxia{
+
+	}
+
+	#erweimaxia{
+		width: 246px;
+		height: 181px;
+		background:url(../image/er.jpg);
+	}
+
+	#footerc{
+		background:url(../image/hzhb.gif);
+	}
+
+	#header2{
+		height: 114px;
+		background:url(../image/houtai.png);
+	}
+
+     

@@ -1,0 +1,55 @@
+   <div id="content">　　<!--这个是总的div content-->
+       <div id="header">
+          <div id="headergundong">
+             <br />
+             <marquee behavior="alternate" ><h1 style="color:black;font:bold;font-family:楷体; ">欢迎来到，江西缴费通网上营业厅 ！</h1></marquee>
+         </div>
+         <div id="YongHuJiaofei">
+            <a href="<%= pay_path %>" style='text-decoration:none'><h1 style="text-align:center;  font-size: 21px;">【用户缴费】</h1></a>
+        </div>
+        <div id="ManagerLogin">
+            <a href="<%= login_path %>" style='text-decoration:none'><h1 style="text-align:center;  font-size: 21px;">【管理员登录】</h1></a>
+        </div>
+    </div>      <!--这个是总的div里的头部div-->
+    <div class="htmleaf-container" >      <!--这个div是用来做菜单的-->
+       <nav class="animenu"> 
+         <button class="animenu__toggle">
+          <span class="animenu__toggle__bar"></span>
+          <span class="animenu__toggle__bar"></span>
+          <span class="animenu__toggle__bar"></span>
+      </button>
+      <ul class="animenu__nav">
+          <li style="font-weight:bold">
+            <a href="<%= root_path %>" >网厅首页</a>
+        </li>
+        <li style="font-weight:bold">
+            <a href="#">费用业务</a>
+            <ul class="animenu__nav__child" style="z-index:10">
+             <li style="font-weight:bold"><a href="<%= pay_path %>">　网上缴费</a></li>
+             <li style="font-weight:bold"><a href="<%= search_path %>">　缴费查询</a></li>
+         </ul>
+     </li>     
+     <li style="font-weight:bold">
+        <a href="#">服务指南</a>
+        <ul class="animenu__nav__child" style="z-index:10">
+         <li style="font-weight:bold"><a href="">　服务公告</a></li>
+         <li style="font-weight:bold"><a href="">　服务承若</a></li>
+         <li style="font-weight:bold"><a href="">　收费标准</a></li>
+         <li style="font-weight:bold"><a href="">　服务程序</a></li>
+         <li style="font-weight:bold"><a href="">　服务网点</a></li>
+     </ul>
+ </li>
+ <li style="font-weight:bold">
+    <a href="#">用气常识</a>
+    <ul class="animenu__nav__child" style="z-index:10">
+     <li style="font-weight:bold"><a href="">　安全用气</a></li>
+     <li style="font-weight:bold"><a href="">　常见问题</a></li>
+     <li style="font-weight:bold"><a href="">　法律法规</a></li>
+ </ul>
+</li>
+<li style="font-weight:bold">
+    <a href="">关于我们</a>
+</li>                 
+</ul>
+</nav>
+</div>

@@ -1,0 +1,18 @@
+<%= form_for '', html: { id: 'fuel_edit', class: 'fuel_form', style: 'display: none' } do |f| %>
+	<div><%= f.text_field :unit, placeholder: '收费单位', class: 'field' %></div>	
+	<div><%= f.text_field :number, placeholder: '账户号', class: 'field' %></div>	
+	<div><%= f.text_field :name, placeholder: '户主姓名', class: 'field' %></div>	
+	<div><%= f.text_field :address, placeholder: '户主地址', class: 'field' %></div>	
+	<div><%= f.text_field :balance, placeholder: '账户余额', class: 'field' %></div>	
+	<div>
+		<%= f.radio_button :deleted, false, checked: true %>
+		<span class="radio">已激活</span>	
+		<%= f.radio_button :deleted, true %>
+		<span class="radio">未激活</span>	
+	</div>
+	<input type="hidden" name="id" value="" />	
+	<div>
+		<a href="#" class="button" onclick="updateFuel('#fuel_edit')">修改账户信息</a>
+		<a href="#" class="button" onclick="cancelFuel('edit')">取消</a>
+	</div>
+<% end %>

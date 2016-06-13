@@ -1,0 +1,11 @@
+<tr>
+	<td class="no"><%= fuel_counter+1 %></td>
+	<td class="unit"><%= fuel.unit.to_s %></td>
+	<td class="number"><%= fuel.number.to_s %></td>
+	<td class="name"><%= fuel.name.to_s %></td>
+	<td class="address"><%= fuel.address.to_s %></td>
+	<td class="balance"><%= fuel.balance.to_s %></td>
+	<td class="deleted"><%= fuel.deleted? ? '未激活' : '已激活' %></td>
+	<td class="edit" style="padding-right: 5px"><a href="#" class="opt" onclick="editFuel(<%= fuel.id %>)">修改</a></td>
+	<td class="delete" style="padding-left: 5px"><a href="#" class="opt" onclick="destroyFuel(<%= fuel.id %>)">删除</a></td>
+</tr>

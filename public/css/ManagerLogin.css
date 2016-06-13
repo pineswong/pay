@@ -1,0 +1,48 @@
+#Login{
+	width: 1200px;
+	height: 360px;
+	border: 1px solid #bfddfa;
+	margin-top: 30px;
+}
+
+#Login-left{
+	width: 650px;
+	height: 356px;
+	background: red;
+	margin-left: 1px;
+	margin-top: 1px;
+	background:url(../image/Login.jpg);
+	float: left;
+}
+
+#Login-right{
+	width: 500px;
+	height: 300px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 20px;
+	background:url(../image/Loginbg.png);
+	background-repeat: no-repeat;
+	background-position: 0px 60px;
+}
+
+#ManagerIndex{
+	width: 1200px;
+	min-height: 480px;
+	border: 1px solid #bfddfa;
+	margin-top: 30px;
+}
+
+#manager-left{
+	width: 300px;
+	min-height: 480px;
+	float: left;
+	background: #DDEDFF;
+}
+
+#manager-right{
+	width: 890px;
+	min-height: 480px;
+	float: right;
+	background: #DDEDFF;
+}

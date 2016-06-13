@@ -1,0 +1,106 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Pine Wong (pinewong@163.com)
+ * @date    2016-05-28 10:40:33
+ * @version $Id$
+ */
+
+$base-color: #f8504b;
+$base-padding: 20px;
+$link-color: #000;
+$link-color-hover: #f8504b;
+$title-color: #000;
+$hint-color: #333;
+$button-bg-color: #1D6DA2;
+$button-bg-color-hover: #4D6De2;
+$button-color: #fff;
+$button-color-hover: #eee;
+
+.pine-container { margin: auto; width: 1110px; padding: 20px 0; }
+.pine-padding { padding: $base-padding; }
+
+img { display: block; }
+
+/* 闪现消息 */
+#flash { 
+	background: rgb(226,238,217); 
+	.item { height: 30px; line-height: 30px; }
+	.success { color: rgb(132,157,128); }
+	.danger { color: $base-color; }
+	.info { color: blue; }
+	.warning { color: orange; }
+}
+
+/* debug */
+.debug_dump { font-size: 16px; width: 60%; margin: 0 auto; }
+
+/* 账户 */
+#fuel_index {
+	th { padding: 20px 20px; }
+	td { padding: 10px 20px; }
+	td { border-top: solid 1px gray }
+	.opt {}
+}
+
+/* 表单 */
+.fuel_form {
+	padding: 10px 25px;
+	.field { width: 260px; padding: 7px 5px; margin-bottom: 10px;  }
+	.radio { display: inline-block; margin-right: 20px; margin-bottom: 20px; }
+	.button { 
+		display: inline-block; background: $button-bg-color; color: $button-color; padding: 5px 10px; letter-spacing: 3px; text-decoration: none; border-radius: 3px; margin-right: 10px; font-size: 14px; border: none; cursor: pointer; transition: all 0.3s ease 0s;
+		&:hover { background: $button-bg-color-hover; color: $button-color-hover; };
+	}
+}
+
+/* 边栏 */
+.fuel_sidebar {
+	padding: 20px 20px;
+	.title { 
+		font-weight: normal; margin: 20px 0; 
+		a { margin-left: 20px; }
+	}
+	.admin { font-size: 13px; color: $hint-color; margin-bottom: 10px; }
+	.link { margin-bottom: 10px; }
+}
+
+a {
+	text-decoration: none; 
+	font-size: 14px;
+	transition: all 0.2s ease 0s;
+	&:link { color: $link-color }
+	&:visited { color: $link-color; }
+	&:hover { color: $link-color-hover; }
+	&:active { color: red; }
+}
+
+.button_a { 
+	display: inline-block; background: $button-bg-color; color: $button-color; padding: 5px 10px; letter-spacing: 3px; text-decoration: none; border-radius: 3px; margin-right: 10px; font-size: 14px; border: none; cursor: pointer; transition: all 0.3s ease 0s;
+	&:hover { background: $button-bg-color-hover; color: $button-color-hover; };
+}
+
+#ManagerIndex {
+	#fuel_new, #fuel_edit {
+		margin-top: 20px;
+		margin-left: 280px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

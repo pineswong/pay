@@ -1,0 +1,49 @@
+#JiaoFei{
+	width: 1200px;
+	height: 400px;
+	border: 1px solid #bfddfa;
+}
+
+#JiaoFeiInf{
+	width: 400px;
+	height: 200px;
+	margin: 30px auto 0;
+}
+
+#Infdisplay{
+	/*width: 1200px;*/
+	/*height: 400px;*/
+	/*border: 1px solid #bfddfa;*/
+}
+
+#Inmformation{
+	/*width: 300px;*/
+	/*height: 200px;*/
+	margin: 0px auto;
+	margin-top: 30px;
+}
+
+#Jine{
+	/*width: 300px;*/
+	height: 100px;
+	margin: 0px auto;
+}
+
+#ChaXun{
+	width: 1200px;
+	height: 400px;
+	border: 1px solid #bfddfa;
+}
+
+#shuru{
+	width: 400px;
+	height: 100px;
+	margin: 0px auto;
+	margin-top: 30px;
+}
+
+#xinxi{
+	width: 800px;
+	height: 200px;
+	margin: 0px auto;
+}

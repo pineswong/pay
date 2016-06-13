@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+	<title>用户缴费</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="布尔教育 http://www.itbool.com" />
+	<link  href="css/index.css" rel="stylesheet" type="text/css" />
+	<link href="css/menustyle.css" rel="stylesheet">
+	<link href="css/ManagerLogin.css" rel="stylesheet">
+	<link href="css/JiaoFei.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/startMove.js"></script>      
+	<script type="text/javascript" src="js/jQuerystartMove.js"></script>
+
+</head>
+<body>
+	<!--这个是总的div content-->
+	<div id="content">　　
+
+		<div id="JiaoFei">
+			<div id="JiaoFeiInf">
+				<script type="text/javascript">
+					function check(form) {
+
+						if(form.userId.value=='') {
+							alert("用户号不能为空!");
+							form.userId.focus();
+							return false;
+						}
+						if(form.password.value==''){
+							alert("收费公司不能为空!");
+							form.password.focus();
+							return false;
+						}
+						return true;
+					}
+				</script>
+
+<!-- <form action="" method="post">
+用户编号
+  <input type=text name="userId" size="19" value="" >
+<br />
+<br />
+ 收费公司      
+<input type="text" name="password" size="19" value=""/>      
+
+ <input type=submit name="submit1" value="下一步" onclick="return check(this.form)">  
+
+</form>   
+-->    
+
+<!-- 缴费项 -->
+<%= form_for '', html: { id: 'fuel_match', class: 'fuel_form' } do |f| %>
+	<div>
+		<%= f.text_field :number, placeholder: '账户号', class: 'field' %>
+	</div>
+
+	<div>
+		<%= f.text_field :name, placeholder: '户主姓名', class: 'field' %>
+	</div>
+
+	<div>
+	  <a href="#" class="button" onclick="matchFuel('#fuel_match')">马上缴费</a>
+	</div>
+<% end %>
+
+<!-- 订单项 -->
+<div id="Infdisplay" style="display: none">
+	<div id="Inmformation">
+		<%= form_for '', html: { id: 'fuel_edit', class: 'fuel_form' } do |f| %>
+			<div><%= f.text_field :unit, placeholder: '收费单位', class: 'field', id: 'fuel_unit' %></div>	
+			<div><%= f.text_field :number, placeholder: '账户号', class: 'field', id: 'fuel_number' %></div>	
+			<div><%= f.text_field :name, placeholder: '户主姓名', class: 'field', id: 'fuel_name' %></div>	
+			<div><%= f.text_field :address, placeholder: '户主地址', class: 'field', id: 'fuel_address' %></div>	
+			<div><%= f.text_field :balance, placeholder: '账户余额', class: 'field', id: 'fuel_balance' %></div>	
+		<% end %>
+	</div>
+	<div id="Jine">
+		<script type="text/javascript">
+			function check(form) {
+				if($(form).password.value==''){
+					alert("请输入金额");
+					form.password.focus();
+					return false;
+				}
+				return true;
+			}
+		</script>
+
+		<!-- 订单项 -->
+		<%= form_for '', html: { id: 'fuel_pay_form', class: 'fuel_form' } do |f| %>
+			<div>
+				<%= f.text_field :money, placeholder: '金额', class: 'field' %>
+			</div>
+
+			<%= f.hidden_field :id, id: 'pay_id' %>
+
+			<div>
+			  <a href="#" class="button" onclick="payFuel('#fuel_pay_form')">确认缴费</a>
+			</div>
+		<% end %>
+
+<!--     <form action="" method="post">
+
+      <br />
+      <br />
+      　金　额      
+      <input type="text" name="password" size="14" value=""/>      
+
+      <input type=submit name="submit1" value="确认缴费" onclick="return check(this.form)">  
+    </form>   
+  -->  </div>
+</div>
+
+</div></div>
+
+</div>
+</body>
+</html>
+

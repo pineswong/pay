@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+  <title>欢迎使用燃气缴费系统</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="布尔教育 http://www.itbool.com" />
+  <link  href="css/index.css" rel="stylesheet" type="text/css" />
+  <link href="css/menustyle.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" />
+  <script type="text/javascript" src="js/startMove.js"></script>      
+  <script type="text/javascript" src="js/jQuerystartMove.js"></script>
+
+
+</head>
+
+<body>
+ <!--这个是总的div content-->
+ <div id="content">　　
+
+  <div id="body">
+    <div id="Shang">
+     <div id="Shang-left">
+      <div id="kuaijiejiaofei" style="width:185px;height:28px;float:left;margin-top:12px;">
+        <h1 style="color:#0071AA; text-align:right;  font-size: 21px;">快  捷  缴  费</h1>
+      </div>
+      <div id="hot" style="width:30px;height:13px;float:left;margin-top:16px;background:url(image/ico_hot.gif)"></div>
+      <hr width=100% size=3 color=#6EADF3 alingn=center />
+
+      <script type="text/javascript">
+       function check(form) {
+
+        if(form.userId.value=='') {
+          alert("请输入用户编号");
+          form.userId.focus();
+          return false;
+        }
+        if(form.password.value==''){
+          alert("请输入收费公司");
+          form.password.focus();
+          return false;
+        }
+        return true;
+      }
+    </script>
+
+<!--     <form action="<%= pay_path %>" method="post">
+        用户编号
+        <input type=text name="userId" size="19" value="" >
+        <br />
+        <br />
+        收费公司      
+        <input type=text name="password" size="19" value=""/>      
+        <input type=submit name="submit1" value="马上缴费" onclick="return check(this.form)">  
+    </form>  
+  -->
+  <!-- 缴费项 -->
+  <%= form_for '', html: { id: 'fuel_quickpay', class: 'fuel_form' } do |f| %>
+  <div>
+    <%= f.text_field :number, placeholder: '账户号', class: 'field' %>
+  </div>
+
+  <div>
+    <%= f.text_field :name, placeholder: '户主姓名', class: 'field' %>
+  </div>
+
+  <div>
+    <%= f.text_field :money, placeholder: '缴费金额', class: 'field' %>
+  </div>
+
+  <div>
+    <a href="#" class="button" onclick="quickpayFuel('#fuel_quickpay')">快速缴费</a>
+  </div>
+  <% end %>
+</div>
+<div id="Shang-right">
+  <div id="box">
+   <ul id="pic_list">
+    <li style="z-index:2;opacity:1;fliter:alpha(opacity=100);">
+     <a href=""><img width="876" height="225" src="image/pic_1.jpg" alt="" /></a></li>
+     <li><a href=""><img width="876" height="225" src="image/pic_2.jpg" alt="" /></a></li>
+     <li><a href=""><img width="876" height="225" src="image/pic_3.jpg" alt="" /></a></li>
+
+   </ul>
+
+   <div class="mark"></div>
+
+   <ul id="text_list">
+    <li><h2 class="show"><a href=""></a></h2></li>
+    <li><h2><a href=""></a></h2></li>
+    <li><h2><a href=""></a></h2></li>
+
+  </ul>
+
+  <div id="ico_list">
+    <ul>
+     <li class="active"><a href="javascript:void(0)"><img width="115" height="28" src="image/ico_1.png" alt="" /></a></li>
+     <li><a href="javascript:void(0)"><img width="115" height="28" src="image/ico_2.png" alt="" /></a></li>
+     <li><a href="javascript:void(0)"><img width="115" height="28" src="image/ico_3.png" alt="" /></a></li>
+
+   </ul>
+ </div>
+
+ <a href="javascript:void(0)" id="btn_prev" class="btn"></a>
+ <a href="javascript:void(0)" id="btn_next" class="btn showBtn"></a>
+</div>
+</div>
+</div>
+
+<div id="Zhong">
+ <div id="Zhong-left"></div>
+ <div id="Zhong-right"></div>
+</div>
+
+<div id="Xia">
+ <div id="Xia-left"></div>
+ <div id="Xia-right">
+  <div id="gonggao">
+   <div id="gonggaobiaoti" >
+    <div style="height:10px;"></div>
+    <div id="aaaaa"><a href="" style='text-decoration:none'><h1 align="center" ><font color="#1D6DA2">最新公告</font></h1></a></div>
+
+  </div>
+  <hr width=100% size=3 color=#6EADF3 alingn=center />
+  <div id="gonggaoneirong">
+    <marquee align=center scrollAmount="2" direction="up" width="620" height="185">
+
+     <div style="line-height:30px; width:620px"><a href="http://www.jft.net.cn/jft/jftweb/jftnews/newsdetail.htm?articleid=0c19bc6394db499699140fc6170dcf00&nowtime=1465011509335" style='text-decoration:none'><h2 ><font color="#322E2E">　　1.盛夏之约 畅游巴厘　　　　　　　　　　　2016-05-01 10:27:37</font></h2></a></div>
+     <hr width=99% size=3 color=#EAEAEA alingn=center />
+     <div style="line-height:30px; width:620px"><a href="http://www.jft.net.cn/jft/jftweb/jftnews/newsdetail.htm?articleid=d1fd65a568e040b6864812ba9ab028ba&nowtime=1465011558318" style='text-decoration:none'><h2 ><font color="#322E2E">　　2.反洗钱小知识     　　　　　　　　　　　　　2016-02-25 14:17:06</font></h2></a></div>
+     <hr width=99% size=3 color=#EAEAEA alingn=center />
+     <div style="line-height:30px; width:620px"><a href="http://www.jft.net.cn/jft/jftweb/jftnews/newsdetail.htm?articleid=b9d79ca7580a484cb54ae26a9815c9d8&nowtime=1465011576226" style='text-decoration:none'><h2 ><font color="#322E2E">　　3.【闹元宵】缴费还能去泰国游？	　　　　　2016-02-22 14:29:13</font></h2></a></div>
+     <hr width=99% size=3 color=#EAEAEA alingn=center />
+     <div style="line-height:30px; width:620px"><a href="http://www.jft.net.cn/jft/jftweb/jftnews/newsdetail.htm?articleid=a9c732bf237d4653a4237331baf40f00&nowtime=1465011592058" style='text-decoration:none'><h2 ><font color="#322E2E">　　4.缴费通春节公告	　　　　　　　　　　　　2016-02-05 09:01:28</font></h2></a></div>
+     <hr width=99% size=3 color=#EAEAEA alingn=center />
+     <div style="line-height:30px; width:620px"><a href="http://www.jft.net.cn/jft/jftweb/jftnews/newsdetail.htm?articleid=2223c2fa38ff4a2aa038ee253c008192&nowtime=1465011613607" style='text-decoration:none'><h2 ><font color="#322E2E">　　5.关于“爱心接力”捐款10万的公告	　　　　　2016-01-12 10:55:57</font></h2></a></div>
+     <hr width=99% size=3 color=#EAEAEA alingn=center />
+     <div style="line-height:30px; width:620px"><a href="http://www.jft.net.cn/jft/jftweb/jftnews/newsdetail.htm?articleid=cb7bb1266e7d482d8765e9ea1fbd3145&nowtime=1465011631297" style='text-decoration:none'><h2 ><font color="#322E2E">　　6.缴费通绿卡暂时无法乘坐南昌地铁的公告	　2015-12-25 21:34:34</font></h2></a></div>
+     <hr width=99% size=3 color=#EAEAEA alingn=center />
+
+   </marquee>
+
+
+ </div>
+</div>
+<div id="erweima">
+ <div id="erweimashang">
+  <div style="height:10px;"></div>
+  <div id="aaaaab"><h1 align="center" ><font color="#322E2E">缴费通微信</font></h1></div>
+</div>
+<hr width=100% size=3 color=#6EADF3 alingn=center />
+<div id="erweimaxia"></div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
