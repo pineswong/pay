@@ -49,7 +49,7 @@ class WaterAPI < Grape::API
 		requires :number, type: String, message: :requires, desc: '账户号'
 		requires :name, type: String, message: :requires, desc: '户主姓名'
 	end
-	get 'match' do
+	post 'match' do
 		@water = Water.where(number: params[:number], name: params[:name]).first
 		# 账户不存在
 		if @water.nil?
