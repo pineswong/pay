@@ -29,7 +29,7 @@ class WaterAPI < Grape::API
 		requires :id, type: Integer, message: :requires, desc: '账户ID'
 		requires :money, type: String, message: :requires, desc: '缴费金额'
 	end
-	patch 'pay' do
+	put 'pay' do
 		@water = Water.find_by(id: params[:id])
 		error!('没有找到该账户', 404) if @water.nil?
 		error!('缴费金额不合理', 498) if params[:money].nil? || params[:money].to_f<=0
@@ -149,7 +149,7 @@ class WaterAPI < Grape::API
 	 		optional :balance, type: String, desc: '账户余额'
 	 		optional :deleted, type: Boolean, desc: '账户未激活？'
 		end
-		patch ':id' do
+		put ':id' do
 			@water = Water.find_by(id: params[:id])
 			if @water.nil?
 				error!('没有找到该账户', 404)
@@ -180,6 +180,7 @@ class WaterAPI < Grape::API
 			requires :id, type: Integer, desc: '账户ID', message: :requires
 		end
 		delete ':id' do
+			status 204
 			@water = Water.find_by(id: params[:id])
 			if @water.nil?
 				error!('没有找到该账户', 404)

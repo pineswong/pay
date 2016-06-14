@@ -87,7 +87,7 @@ function updateFuel(form) {
 	id = $('#fuel_edit [name="id"]').val();
 	$.ajax({
 		url: 'http://localhost:3000/api/fuels/' + id,
-		type: 'patch',
+		type: 'put',
 		data: $(form).serialize(),
 		complete: function(xhr) {
 			if (xhr.status == 200) {
@@ -161,7 +161,7 @@ function destroyFuel(id) {
 		url: 'http://localhost:3000/api/fuels/' + id,
 		type: 'delete',
 		complete: function(xhr) {
-			if (xhr.status == 200) {
+			if (xhr.status == 204) {
 				alert('删除账户成功！\n' + xhr.responseText);
 				window.location.href="/fuels"; 
 			} else {
@@ -195,10 +195,10 @@ function cancelFuel(ori) {
 function matchFuel(form) {
 	$.ajax({
 		url: 'http://localhost:3000/api/fuels/match',
-		type: 'get',
+		type: 'post',
 		data: $(form).serialize(),
 		complete: function(xhr) {
-			if (xhr.status == 200) {
+			if (xhr.status == 201) {
 				$('#fuel_match').fadeOut(300, function() {
 					$('#Infdisplay').fadeIn(300);
 				});
@@ -233,7 +233,7 @@ function payFuel(form) {
 
 	$.ajax({
 		url: 'http://localhost:3000/api/fuels/pay',
-		type: 'patch',
+		type: 'put',
 		data: $(form).serialize(),
 		complete: function(xhr) {
 			if (xhr.status == 200) {
@@ -254,7 +254,7 @@ function quickpayFuel(form) {
 
 	$.ajax({
 	  url: 'http://localhost:3000/api/fuels/quickpay',
-	  type: 'patch',
+	  type: 'put',
 	  data: $(form).serialize(),
 	  complete: function(xhr) {
 	    if (xhr.status == 200) {

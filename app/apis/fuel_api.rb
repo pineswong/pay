@@ -30,7 +30,7 @@ class FuelAPI < Grape::API
 		requires :name, type: String, message: :requires, desc: '户主姓名'
 		requires :money, type: String, message: :requires, desc: '缴费金额'
 	end
-	patch 'quickpay' do
+	put 'quickpay' do
 		@fuel = Fuel.where(number: params[:number], name: params[:name]).first
 		error!('没有找到该账户', 404) if @fuel.nil?
 		error!('缴费金额不合理', 498) if params[:money].nil? || params[:money].to_f<=0
@@ -52,7 +52,7 @@ class FuelAPI < Grape::API
 		requires :id, type: Integer, message: :requires, desc: '账户ID'
 		requires :money, type: String, message: :requires, desc: '缴费金额'
 	end
-	patch 'pay' do
+	put 'pay' do
 		@fuel = Fuel.find_by(id: params[:id])
 		error!('没有找到该账户', 404) if @fuel.nil?
 		error!('缴费金额不合理', 498) if params[:money].nil? || params[:money].to_f<=0
@@ -172,7 +172,7 @@ class FuelAPI < Grape::API
 	 		optional :balance, type: String, desc: '账户余额'
 	 		optional :deleted, type: Boolean, desc: '账户未激活？'
 		end
-		patch ':id' do
+		put ':id' do
 			@fuel = Fuel.find_by(id: params[:id])
 			if @fuel.nil?
 				error!('没有找到该账户', 404)
@@ -203,6 +203,7 @@ class FuelAPI < Grape::API
 			requires :id, type: Integer, desc: '账户ID', message: :requires
 		end
 		delete ':id' do
+			status 204
 			@fuel = Fuel.find_by(id: params[:id])
 			if @fuel.nil?
 				error!('没有找到该账户', 404)
