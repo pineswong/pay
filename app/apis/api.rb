@@ -32,6 +32,7 @@ class API < Grape::API
 	# 挂载api
 	mount FuelAPI => 'fuels'
 	mount WaterAPI => 'waters'
+	mount RecordAPI => 'records'
 	mount SessionAPI => 'sessions'
 	mount UserAPI => 'users'
 	# mount TestAPI => 'tests'
