@@ -22,7 +22,7 @@ function newFuel() {
 }
 function createFuel(form) {
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels',
+		url: 'http://pay.urlis.cn/api/fuels',
 		type: 'post',
 		data: $(form).serialize(),
 		complete: function(xhr) {
@@ -60,7 +60,7 @@ function editFuel(id) {
 		$('#fuel_edit').fadeIn(300);
 	});
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels/' + id,
+		url: 'http://pay.urlis.cn/api/fuels/' + id,
 		type: 'get',
 		complete: function(xhr) {
 			if (xhr.status == 200) {
@@ -86,7 +86,7 @@ function editFuel(id) {
 function updateFuel(form) {
 	id = $('#fuel_edit [name="id"]').val();
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels/' + id,
+		url: 'http://pay.urlis.cn/api/fuels/' + id,
 		type: 'put',
 		data: $(form).serialize(),
 		complete: function(xhr) {
@@ -112,7 +112,7 @@ function updateFuel(form) {
 // 检索账户
 function searchFuel(form) {
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels/search',
+		url: 'http://pay.urlis.cn/api/fuels/search',
 		type: 'get',
 		data: $(form).serialize(),
 		complete: function(xhr) {
@@ -123,7 +123,7 @@ function searchFuel(form) {
 				if (!$('#fuel_new').is(':hidden')) {
 					item = $('#fuel_new');
 				}
-				if (!$('#fuel_edit').is(':hidden')) {
+				if (!$('#fuel_edit').is(':hidden')) {search
 					item = $('#fuel_edit');
 				}
 				item.fadeOut(300, function() {
@@ -158,7 +158,7 @@ function destroyFuel(id) {
 	}
 
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels/' + id,
+		url: 'http://pay.urlis.cn/api/fuels/' + id,
 		type: 'delete',
 		complete: function(xhr) {
 			if (xhr.status == 204) {
@@ -194,7 +194,7 @@ function cancelFuel(ori) {
 // 匹配
 function matchFuel(form) {
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels/match',
+		url: 'http://pay.urlis.cn/api/fuels/match',
 		type: 'post',
 		data: $(form).serialize(),
 		complete: function(xhr) {
@@ -232,7 +232,7 @@ function payFuel(form) {
 	}
 
 	$.ajax({
-		url: 'http://localhost:3000/api/fuels/pay',
+		url: 'http://pay.urlis.cn/api/fuels/pay',
 		type: 'put',
 		data: $(form).serialize(),
 		complete: function(xhr) {
@@ -253,7 +253,7 @@ function quickpayFuel(form) {
 	}
 
 	$.ajax({
-	  url: 'http://localhost:3000/api/fuels/quickpay',
+	  url: 'http://pay.urlis.cn/api/fuels/quickpay',
 	  type: 'put',
 	  data: $(form).serialize(),
 	  complete: function(xhr) {
