@@ -7,4 +7,5 @@ class UserEntity < Grape::Entity
 	expose :phone, documentation: { type: String, desc: '手机号' }
 	expose :admin, documentation: { type: String, desc: '管理员？' }
 	expose :deleted, documentation: { type: String, desc: '账户未激活？' }
+	expose :token, documentation: { type: String, desc: '登陆Token' }
 end

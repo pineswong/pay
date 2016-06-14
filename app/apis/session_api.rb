@@ -13,7 +13,9 @@ class SessionAPI < Grape::API
 		if !@user || !@user.authenticate(params[:password])
 			error!('登陆失败，用户名或密码错误', 401)
 		end
-		{ token: JWT.encode({ user_id: @user.id }, 'key') }
+		@user.token = JWT.encode({ user_id: @user.id }, 'key')
+
+    present @user, with: UserEntity
 	end
 
 
