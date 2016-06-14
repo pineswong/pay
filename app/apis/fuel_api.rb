@@ -34,9 +34,17 @@ class FuelAPI < Grape::API
 		@fuel = Fuel.where(number: params[:number], name: params[:name]).first
 		error!('没有找到该账户', 404) if @fuel.nil?
 		error!('缴费金额不合理', 498) if params[:money].nil? || params[:money].to_f<=0
-		error!('操作失败', 499) if !@fuel.update_attribute(:balance, @fuel.balance+params[:money].to_f)
-    # present @fuel, with: FuelEntity
-    { '当前账户余额': @fuel.balance }
+		error_by! @fuel.update_attribute(:balance, @fuel.balance+params[:money].to_f)
+		
+		# 生成记录
+		@record = record!('fuel', @fuel)		
+
+    { 
+    	'成功缴费余额': params[:money],
+    	'当前账户余额': @fuel.balance,
+    	'订单号': @record.order
+    }
+
 	end
 
 
@@ -56,9 +64,16 @@ class FuelAPI < Grape::API
 		@fuel = Fuel.find_by(id: params[:id])
 		error!('没有找到该账户', 404) if @fuel.nil?
 		error!('缴费金额不合理', 498) if params[:money].nil? || params[:money].to_f<=0
-		error!('操作失败', 499) if !@fuel.update_attribute(:balance, @fuel.balance+params[:money].to_f)
-    # present @fuel, with: FuelEntity
-    { '当前账户余额': @fuel.balance }
+		error_by! @fuel.update_attribute(:balance, @fuel.balance+params[:money].to_f)
+
+		# 生成记录
+		@record = record!('fuel', @fuel)		
+		
+    { 
+    	'成功缴费余额': params[:money],
+    	'当前账户余额': @fuel.balance,
+    	'订单号': @record.order
+    }
 	end
 
 

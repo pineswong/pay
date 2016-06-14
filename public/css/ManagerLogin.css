@@ -28,7 +28,7 @@
 
 #ManagerIndex{
 	width: 1200px;
-	min-height: 480px;
+	min-height: 522px;
 	border: 1px solid #bfddfa;
 	margin-top: 30px;
 }
@@ -42,7 +42,7 @@
 
 #manager-right{
 	width: 890px;
-	min-height: 480px;
+	min-height: 520px;
 	float: right;
 	background: #DDEDFF;
 }

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   get 'pay', to: 'fuels#pay'
   get 'search', to: 'fuels#search'
+  get 'records', to: 'fuels#records'
 
   # 资源
   resources :fuels

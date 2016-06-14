@@ -27,6 +27,24 @@ class API < Grape::API
 		def current_user
 			@current_user
 		end
+
+		# 生成缴费记录
+		def record!(type, account)
+			record_params = Hash.new
+	 		loop do
+				record_params[:order] = "order#{(0..9).to_a.shuffle.join}"
+				break if !Record.exists?(order: record_params[:order])
+			end
+			record_params[:item] = type
+			record_params[:number] = account.number
+			record_params[:name] = account.name
+			record_params[:money] = params[:money]
+			record_params[:balance] = account.balance
+			@record = Record.new(record_params)
+			error_by! @record.save
+
+			@record
+		end
 	end
 
 	# 挂载api

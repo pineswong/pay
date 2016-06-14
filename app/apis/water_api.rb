@@ -33,9 +33,16 @@ class WaterAPI < Grape::API
 		@water = Water.find_by(id: params[:id])
 		error!('没有找到该账户', 404) if @water.nil?
 		error!('缴费金额不合理', 498) if params[:money].nil? || params[:money].to_f<=0
-		error!('操作失败', 499) if !@water.update_attribute(:balance, @water.balance+params[:money].to_f)
-    # present @water, with: WaterEntity
-    { '当前账户余额': @water.balance }
+		error_by! @water.update_attribute(:balance, @water.balance+params[:money].to_f)
+	
+		# 生成记录
+		@record = record!('water', @water)		
+		
+    { 
+    	'成功缴费余额': params[:money],
+    	'当前账户余额': @water.balance,
+    	'订单号': @record.order
+    }
 	end
 
 

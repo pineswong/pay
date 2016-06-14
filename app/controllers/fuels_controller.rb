@@ -11,6 +11,10 @@ class FuelsController < ApplicationController
 	def index
 		@fuels = Fuel.order(created_at: :desc)
 	end
+
+	def records
+		@records = Record.where(item: 'fuel').order(created_at: :desc)
+	end
 	
 	def new
 	end

@@ -24,7 +24,7 @@ class RecordAPI < Grape::API
 	 	requires :balance, type: String, desc: '账户余额', message: :requires
 	 	optional :order, type: String, desc: '订单号'
 	end
-	put ':item' do
+	post ':item' do
 		declared(params, include_missing: false)
  		loop do
 			params[:order] = "order#{(0..9).to_a.shuffle.join}"
