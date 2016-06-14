@@ -35,8 +35,7 @@ class RecordAPI < Grape::API
 		if params[:money] && params[:money].to_f <= 0
 			error!('缴费金额不合法', 400)
 		end
-		if params[:bala
-			nce] && params[:balance].to_f <= 0
+		if params[:balance] && params[:balance].to_f <= 0
 			error!('账户余额不合法', 400)
 		end
 		error_by!(@record.save)
