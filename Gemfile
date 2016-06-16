@@ -5,6 +5,8 @@ gem 'bcrypt', '3.1.7'
 # 分页
 gem 'will_paginate', '3.0.7'
 
+gem 'mina'
+
 # API
 gem 'grape'
 gem 'grape-entity'
