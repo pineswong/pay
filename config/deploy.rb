@@ -12,7 +12,7 @@ require 'mina/git'
 
 set :domain, '139.129.28.205'
 set :deploy_to, '/var/www/pay.urlis.cn'
-set :repository, 'https://github.com/pinewong/pay.git'
+set :repository, 'git://github.com/pinewong/pay.git'
 set :branch, 'master'
 
 # For system-wide RVM install.
