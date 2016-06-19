@@ -26,7 +26,7 @@ module Payment
     # Grape
     config.paths.add File.join('app', 'apis'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'apis', '*')]
-    config.paths.add File.join('app', 'apis', 'entities'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'apis', 'entities', '*')]
+    # config.paths.add File.join('app', 'apis', 'entities'), glob: File.join('**', '*.rb')
+    # config.autoload_paths += Dir[Rails.root.join('app', 'apis', 'entities', '*')]
   end
 end
